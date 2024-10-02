@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fichas Técnicas PDF</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .container {
+            margin: 30px auto;
+            width: 80%;
+            max-width: 1000px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            cursor: pointer;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        li:hover {
+            background-color: #e6e6e6;
+        }
+
+        ul ul {
+            display: none;
+            margin-left: 20px;
+            padding-left: 20px;
+            border-left: 2px solid #0056b3;
+        }
+
+        li.folder::before {
+            content: "\1F4C1";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        li.pdf::before {
+            content: "\1F4D1";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        li.active > ul {
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #003d82;
+        }
+    </style>
+</head>
+<body>
+
+<header>FICHAS TÉCNICAS</header>
+
+<div class="container">
+    <ul>
+        <!-- Primera carpeta Barrilito -->
+        <li class="folder">BARRILITO
+            <ul>
+                <li class="folder">MODERNO
+                    <ul>
+                        <li class="folder">325 ML
+                            <ul>
+                                <li class="pdf"><a href="/FichasTecnicas/BARRILITO/MODERNO/325%20ML/1067_1434%20B%20325%20ML%2024%20PK%20NR%20REV%2001.pdf" target="_blank">Archivo PDF 1</a></li>
+                            </ul>
+                        </li>
+                        <li class="folder">TRADICIONAL
+                            <ul>
+                                <li class="folder">Carpeta 1
+                                    <ul>
+                                        <li class="pdf"><a href="/FichasTecnicas/BARRILITO/TRADICIONAL/Carpeta1/archivo2.pdf" target="_blank">Archivo PDF 2</a></li>
+                                    </ul>
+                                </li>
+                                <li class="folder">Carpeta 2
+                                    <ul>
+                                        <li class="pdf"><a href="/FichasTecnicas/BARRILITO/TRADICIONAL/Carpeta2/archivo3.pdf" target="_blank">Archivo PDF 3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="folder">Carpeta 3
+                                    <ul>
+                                        <li class="pdf"><a href="/FichasTecnicas/BARRILITO/TRADICIONAL/Carpeta3/archivo4.pdf" target="_blank">Archivo PDF 4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="folder">Carpeta 4
+                                    <ul>
+                                        <li class="pdf"><a href="/FichasTecnicas/BARRILITO/TRADICIONAL/Carpeta4/archivo5.pdf" target="_blank">Archivo PDF 5</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <!-- Segunda carpeta Bud Light -->
+        <li class="folder">BUD LIGHT
+            <ul>
+                <li class="pdf"><a href="/FichasTecnicas/BUD%20LIGHT/archivo6.pdf" target="_blank">Archivo PDF 6</a></li>
+                <li class="pdf"><a href="/FichasTecnicas/BUD%20LIGHT/archivo7.pdf" target="_blank">Archivo PDF 7</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script>
+    // Funcionalidad para expandir y contraer carpetas
+    document.querySelectorAll('.folder').forEach(folder => {
+        folder.addEventListener('click', function(e) {
+            e.stopPropagation();  // Evita que al hacer clic en una subcarpeta se cierren todas
+            const subList = this.querySelector('ul');
+            if (subList) {
+                subList.style.display = subList.style.display === 'block' ? 'none' : 'block';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
